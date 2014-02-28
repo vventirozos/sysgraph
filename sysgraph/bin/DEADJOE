@@ -1,3 +1,8 @@
+
+*** These modified files were found in JOE when it aborted on Fri Feb 28 20:57:56 2014
+*** JOE was aborted by UNIX signal 15
+
+*** File 'sysgraph.sh'
 #!/bin/bash
 echo "Reading config...." >&2
 source ../etc/sysgraph.conf
@@ -127,8 +132,6 @@ _get_files
 
 _run_parser 2>/dev/null
 
-#rm $tmpdir/*
-#echo $tmpdir
 pngfile=$graph-$date.png
 gnuplot << EOF
 set terminal png size 1920,1080 enhanced font "Helvetica,20"
@@ -155,3 +158,23 @@ echo "Cleaning up temp dir .."
 #cp $tmpdir/output.csv ~/
 rm -rf $tmpdir/*
 echo "Your file can be found at $graphdir/$pngfile ... enjoy"
+
+*** File '(Unnamed)'
+data
+select pg_switch_xlog() ;
+pg_switch
+var = 
+var
+
+*** File '(Unnamed)'
+sysgraph.sh
+sysgraph.sh
+sysgraph.conf
+sysgraph.sh
+sysgraph.sh
+sysgraph.sh
+sysgraph.sh
+sysgraph.sh
+sysgraph.sh
+sysgraph.sh
+sysgraph.sh
