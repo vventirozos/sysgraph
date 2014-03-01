@@ -30,20 +30,20 @@ pg_shared_buffers (it doesn't get it from pg_shared_buffers view, so its not ver
 
 Other graphs can be easily added but you will need 3 things :
 
-1. A Parser
+1) A Parser
 Parser can be any program or script, it has to have at least 2 variables for input and output dir,
 it can have many other variables defined in the configuration file (see bellow)
 parsers final file should be called output.csv (to be fixed and defined in the config file).
 
 
-2. config file
+2) config file
 configuration file has options for the parsers and some global variables defined, it can hold
 all configuration parameters for the parsers, like :
 
 read_disk="fioa"
 read_column="rkB/s"
 
-3. script changes
+3) script changes
 
 Adding a new parser needs some editing in the script (sysgraph.sh):
 
@@ -73,7 +73,6 @@ elif [ $graph = io_read ]
 
 the variables should be defined in configuration file
 
-4. logo
-in order to add a logo on the graph you need to have imagemagick and a logo logo's path can be
+to add a logo on the graph you need to have imagemagick and a logo logo's path can be
 defined in the configuration file.
 
