@@ -4,10 +4,10 @@ but its a result of 1-2 days work. its fast has no dependencies and if you set i
 work.Not sure how much more efford i will put on this but goes well for me in my production systems, 
 i am definitely planning to inprove.
 
-#
-# To Do : move properties of the graph elsewhere , add many checks , change output.csv to a variable,
-#         make the plot command more simple
-#
+
+To Do : move properties of the graph elsewhere , add many checks , change output.csv to a variable,
+         make the plot command more simple
+
 
 It requires gnuplot, stadard unix utilities and imagemagick if you want to add a custom logo.
 The script requires some configuration before its executed , like input / output dir, check the config
