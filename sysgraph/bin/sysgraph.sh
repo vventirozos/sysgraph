@@ -31,14 +31,14 @@ if [ $graph = "cpu_load" ]
 	ylabel="load"
 	colums="1:2"
 	limit="100"
-	plot_command="plot '$tmpdir/output.csv' using 1:2 title '%user' with lines ls 1 , '$tmpdir/output.csv' using 1:3 title '%system' with lines ls 5,'$tmpdir/output.csv' using 1:4 title '%idle' with lines ls 4"
+	plot_command="plot '$tmpdir/output.csv' using 1:2 title '%user' with lines ls 1 , '$tmpdir/output.csv' using 1:3 title '%system' with lines ls 3,'$tmpdir/output.csv' using 1:4 title '%idle' with lines ls 4"
 elif [ $graph = "load_avg" ]
 	then file_pattern="loadavg"
 	title="load average report for $date"
 	xlabel="time"
 	ylabel="load"
 	limit="100"  
-	plot_command="plot '$tmpdir/output.csv' using 1:2 title '1min avg' with lines ls 1 , '$tmpdir/output.csv' using 1:3 title '5min avg' with lines ls 5,'$tmpdir/output.csv' using 1:4 title '15min avg' with lines ls 3"
+	plot_command="plot '$tmpdir/output.csv' using 1:2 title '1min avg' with lines ls 1 , '$tmpdir/output.csv' using 1:3 title '5min avg' with lines ls 3,'$tmpdir/output.csv' using 1:4 title '15min avg' with lines ls 4"
 elif [ $graph = io_read ]
 	then
 	title="io read report for $date"
@@ -148,6 +148,7 @@ set xrange[ "00:00:00":"23:59:59" ]
 set yrange [ 0:"$limit" ]
 set format x "%H:%M"
 set datafile separator ','
+#plot "../etc/logo.png" binary filetype=png w rgbimage
 set style line 1 lc rgb '#1E90FF' lt 10 lw 0.5 pt 1 pi -1 ps 0.5
 set style line 4 lc rgb '#32CD32' lt 10 lw 0.5 pt 1 pi -1 ps 0.5
 set style line 5 lc rgb '#006400' lt 10 lw 0.5 pt 1 pi -1 ps 0.5
@@ -158,4 +159,5 @@ EOF
 
 echo "Cleaning up temp dir .."
 rm -rf $tmpdir/*
+composite -geometry +1670+10  $logo $graphdir/$pngfile $graphdir/$pngfile
 echo "Your file can be found at $graphdir/$pngfile ... enjoy"
