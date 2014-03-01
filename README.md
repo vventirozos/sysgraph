@@ -1,23 +1,20 @@
 This is a simple script that will create gnuplot graphs out of any metric.
 It's not the smartest thing ever created, actually it is horrible in many ways
-but its a result of 1-2 days work. its fast has no dependencies and if you set it up it will 
-work.Not sure how much more efford i will put on this but goes well for me in my production systems, 
-i am definitely planning to inprove.
+but its a result of 1-2 days work. Its fast, has no dependencies and if you set it up it will work. Not sure how much more effort i will put on this but if it goes well for me in my production systems, i am definitely planning to improve.
 
 
-To Do : move properties of the graph elsewhere , add many checks , change output.csv to a variable,
-         make the plot command more simple
+To Do : move properties of the graph elsewhere , add many checks , change output.csv to a variable,make the plot command more simple
 
 
 It requires gnuplot, stadard unix utilities and imagemagick if you want to add a custom logo.
-The script requires some configuration before its executed , like input / output dir, check the config
-for more detail and a brief sentence of what each variable means.
+The script requires some configuration before its executed, like input / output dir
+(check the config for more detail and a brief sentence of what each variable means.)
 When its good to go then just run :
 ./sysgraph <date eg: 2014-12-29> <graph name, check help> 
 
-New graphs can be added relatively easy and thats what the rest of the documentation describes.
+New graphs can be added relatively easy and that's what the rest of the documentation describes.
 
-current implemented graphs are :
+Current implemented graphs are :
 
 cpu_load
 load_avg
@@ -61,7 +58,7 @@ elif [ $graph = io_read ]
 A new block similar to this has to be added for each new graph 
 title           = title of the graph
 x/ylabel        = title of X or Y axis
-limit           = limit that you want to set (usefull for big spikes)
+limit           = limit that you want to set (useful for big spikes)
 file_pattern    = the pattern of the file that the script to work with
 plot_command    = the plot command that will run, "1:2" means plot field 1,2 , "lines ls 1" is the type 
                 and style of the graph
