@@ -20,7 +20,7 @@ if test $# -ne 2; then
 	exit 0
 fi
 #
-# following function defines the filenames that script should use
+# Following function defines the filenames that script should use
 #
 function _property {
 if [ $graph = "cpu_load" ]
@@ -80,14 +80,6 @@ elif [ $graph = pg_shared_buffers ]
 	colums="1:2" 
 	limit="1000000000"                                                                                        
     plot_command="plot '$tmpdir/output.csv' using 1:2 title 'buffer count' with lines ls 1"         
-#elif [ $graph = exclusive_locks ]    
-#	then file_pattern="pg_locks"
-#	title="locks for $date"
-#	xlabel="Time"
-#	ylabel="exclusive locks"  
-#	colums="1:2" 
-#    plot_command="plot '$tmpdir/output.csv' using 1:2 title 'exlusive locks' with lines ls 1"
-#	limit="20"                                                        
 else 
 	echo "not right graph type !!"
 	exit 0
@@ -155,5 +147,5 @@ $plot_command
 EOF
 
 echo "Cleaning up temp dir .."
-#rm -rf $tmpdir/*
+rm -rf $tmpdir/*
 echo "Your file can be found at $graphdir/$pngfile ... enjoy"
