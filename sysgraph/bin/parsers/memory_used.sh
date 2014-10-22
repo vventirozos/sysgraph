@@ -13,7 +13,7 @@ c=$(cat $tmpdir/tempfile | sed -e "s/\s\{1,\}/ /g" | grep Cached | awk '{len=spl
 
 cat $tmpdir/tempfile | awk -v mf=$mf -v mt=$mt -v b=$b -v c=$c '{print $2","($mt-$mf-$b-$c)}' > $tmpdir/output1.csv 
 
-awk -F "," '{ tmp=($2)/(1024*1024) ; printf $1",%0.2f\n", tmp }' $tmpdir/output1.csv > $tmpdir/output.csv
+awk -F "," '{ tmp=($2)/(1024*1024) ; printf $1",%0.2f\n", tmp }' $tmpdir/output1.csv > $tmpdir/$output
 
 #rm $tmpdir/output1.csv
-sed -i "1s/^/date\tmem_used\n&/" $tmpdir/output.csv
+sed -i "1s/^/date\tmem_used\n&/" $tmpdir/$output
